@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <h1>Bienvenido a nuestra tienda</h1>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+        {% for producto in productos %}
+        <div style="background: #f1f1f1; border-radius: 8px; padding: 16px; width: 300px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
+            <h2>{{ producto.nombre }}</h2>
+            <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" style="width:100%; border-radius: 4px;">
+            <p>{{ producto.descripcion }}</p>
+            {% if producto.video %}
+            <video width="100%" controls style="margin-bottom:10px;">
+                <source src="{{ producto.video }}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            {% endif %}
+            <form action="/comprar" method="post">
+                <input type="hidden" name="producto" value="{{ producto.nombre }}">
+                <button style="background:#28a745;color:#fff;padding:10px 20px;border:none;border-radius:4px;cursor:pointer;">Comprar</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

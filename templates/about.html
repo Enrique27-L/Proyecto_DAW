@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Acerca de{% endblock %}
+{% block content %}
+    <h2>Sobre el Proyecto</h2>
+    <p>Este proyecto tiene como objetivo ofrecer productos innovadores y un excelente servicio al cliente.</p>
+
+    <h3>Misión y Visión</h3>
+    <ul>
+        <li><strong>Misión:</strong> Brindar soluciones tecnológicas accesibles para todos.</li>
+        <li><strong>Visión:</strong> Ser líderes en innovación y calidad en la región.</li>
+    </ul>
+
+    <h3>Soluciones tecnológicas en la agricultura</h3>
+    <div style="display: flex; gap: 20px;">
+        <div>
+            <img src="https://agrotechcampus.com/wp-content/uploads/2024/08/Beneficios-del-uso-de-drones.jpg" alt="Dron agrícola" style="width:150px; border-radius:8px;">
+            <p>Drones para monitoreo de cultivos</p>
+        </div>
+        <div>
+            <img src="https://redagricola.com/wp-content/uploads/2023/04/sensores-1.jpg" alt="Sensor agrícola" style="width:150px; border-radius:8px;">
+            <p>Sensores para riego inteligente</p>
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRLJl7g54_Rr4NlzMlHaYD4BF_oT3vn2KMg&s" alt="Tablet en campo" style="width:150px; border-radius:8px;">
+            <p>Gestión digital de la producción</p>
+        </div>
+    </div>
+
+    <h3>Valores</h3>
+    <p>Innovación, responsabilidad y compromiso con nuestros clientes.</p>
+
+    <h3>Contacto</h3>
+    <p>Correo: contacto@ejemplo.com</p>
+    <p>
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+    </p>
+
+    <h3>Ubicación</h3>
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-79.2,-0.2,-78.5,0.2&amp;layer=mapnik" width="300" height="200"></iframe>
+{% endblock %}

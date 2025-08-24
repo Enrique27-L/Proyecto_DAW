@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Proyecto{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; }
+        header { background: #343a40; color: #fff; padding: 10px 0; }
+        nav { display: flex; justify-content: center; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+        footer { background: #343a40; color: #fff; text-align: center; padding: 10px 0; margin-top: 40px; }
+        .logo { height: 40px; vertical-align: middle; margin-right: 10px; }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-jHvx_w3rebhkB84mZJL1s0CZ4BSliAeEg&s" alt="Logo" class="logo">
+            <a href="/">Inicio</a>
+            <a href="/about/">Acerca de</a>
+            <a href="/contact/">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Mi Proyecto | Síguenos en 
+            <a href="https://facebook.com" target="_blank" style="color:#fff;">Facebook</a> &amp; 
+            <a href="https://twitter.com" target="_blank" style="color:#fff;">Twitter</a>
+        </p>
+        {% block footer %}{% endblock %}
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
