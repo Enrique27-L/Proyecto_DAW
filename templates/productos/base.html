@@ -8,31 +8,23 @@
   {% block extra_css %}{% endblock %}
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="{{ url_for('index') }}">Inicio</a>
-      <a href="{{ url_for('about') }}">Acerca de</a>
-      <a href="{{ url_for('listar_productos') }}">Productos</a>
-      <a >clientes </a>
-        <a >Inventario </a>
-        <a >Ventas </a>
-        <a >Proveedores </a>
-
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('listar_productos') }}">Productos</a>
+        <a href="{{ url_for('about') }}">Acerca de</a>
     </nav>
-  </header>
-{% with msgs = get_flashed_messages(with_categories=true) %}
-  {% if msgs %}
-    <div class="flash-container">
-      {% for cat, msg in msgs %}
-        <div class="flash {{ cat }}">{{ msg }}</div>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
-
-  <main class="container">
-    {% block content %}{% endblock %}
-  </main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
 
   <footer class="site-footer">
     <small>© {{ 2025 }} Derechos de autor</small>

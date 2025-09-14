@@ -1,8 +1,7 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
 {% block title %}Inicio{% endblock %}
-
 {% block content %}
-<h1>Bienvenido a mi sitio Flask</h1>
-<p>Esta es la página de inicio de mi aplicación Flask.</p>
-<p>Utiliza el menú de navegación para explorar más.</p>
+<h1>Bienvenido a la tienda</h1>
+<p>Explora nuestros productos frescos y sanos.</p>
+<a href="{{ url_for('listar_productos') }}">Ver productos</a>
 {% endblock %}
